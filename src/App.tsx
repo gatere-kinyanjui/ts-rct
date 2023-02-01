@@ -1,43 +1,69 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import "./App.css";
 import { ITask } from "./lib/Interfaces";
 import { nanoid } from "nanoid";
+import TodoTask from "./components/TodoTask/TodoTask";
+import allTodos, { createTodo } from "./lib/Funtions";
 
 const App = () => {
   const [task, setTask] = useState<string>("");
   const [deadline, setDeadline] = useState<number>(0);
   const [todoList, setTodoList] = useState<ITask[]>([]);
 
-  function alternativeChange(text: string | number) {
-    if (typeof text === "string") {
-      setTask(text);
-    } else {
-      setDeadline(text);
-    }
-  }
+  // const alternativeChange = (text: string | number): void => {
+  //   if (typeof text === "string") {
+  //     setTask(text);
+  //   } else {
+  //     setDeadline(text);
+  //   }
+  // };
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    if (e.target.value === "task") {
+  useEffect(() => {
+    allTodos().then((res) => {
+      console.log("side effect init!");
+      setTodoList(res);
+    });
+  }, []);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    if (e.target.name === "task") {
       setTask(e.target.value);
     } else {
       setDeadline(Number(e.target.value));
     }
-    // console.log(e.target.value);
   };
 
   // use prev value when setting the todo list
-  const handleAdd = (): void => {
-    const newTask = { task: task, deadline: deadline, id: nanoid() };
+  const handleAdd = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const newTask = { taskName: task, deadline: deadline, id: nanoid() };
+    createTodo(newTask).then(() => {
+      setTask("");
+      setDeadline(0);
+    });
     setTodoList((prev) => [...prev, newTask]);
     console.log(newTask);
-    setTask("");
-    setDeadline(0);
   };
+
+  // const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+
+  //   console.log(e);
+  // };
+
+  //complete task then filter
+  // const completeTask = (taskNameToDelete: string) => {
+  //   setTodoList(
+  //     todoList.filter((task) => {
+  //       return task.taskName != taskNameToDelete;
+  //     })
+  //   );
+  // };
 
   return (
     <div className="App">
       <h1>theTodoRvstd</h1>
-      <div className="headerContainer">
+      <form className="headerContainer" onSubmit={handleAdd}>
         <div className="inputHeader">
           <input
             type="text"
@@ -45,8 +71,8 @@ const App = () => {
             value={task}
             name="task"
             // required
-            // onChange={handleChange}
-            onChange={(e) => alternativeChange(e.target.value)}
+            onChange={handleChange}
+            // onChange={(e) => alternativeChange(e.target.value)}
           />
           <input
             type="number"
@@ -54,19 +80,20 @@ const App = () => {
             value={deadline}
             name="deadline"
             // required
-            // onChange={handleChange}
-            onChange={(e) => {
-              const number = Number(e.target.value);
-              !isNaN(number) && alternativeChange(number);
-            }}
+            onChange={handleChange}
+            // onChange={(e) => {
+            //   const number = Number(e.target.value);
+            //   !isNaN(number) && alternativeChange(number);
+            // }}
           />
         </div>
-        <button type="submit" onClick={handleAdd}>
-          &#9758;
-        </button>
-      </div>
+        <button type="submit">&#9758;</button>
+      </form>
       <div className="tasksDisplay">
         <h2>Tasks go down here...</h2>
+        {todoList.map((task: ITask) => {
+          return <TodoTask task={task} key={task.id} />;
+        })}
       </div>
     </div>
   );

@@ -74,6 +74,44 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.todoTaskConatiner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  background-color: #3fc56854;
+}
+
+.todoTaskConatiner .contentConatiner {
+  flex: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todoTaskConatiner .contentConatiner span {
+  display: grid;
+  place-items: center;
+  border: 1px solid white;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  border-right: none;
+  background-color: tomato;
+}
+
+.todoTaskConatiner button {
+  flex: 20%;
+  height: 100%;
+  border: none;
+  background-color: lightseagreen;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
