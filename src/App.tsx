@@ -74,7 +74,7 @@ const App = () => {
             onChange={handleChange}
             // onChange={(e) => alternativeChange(e.target.value)}
           />
-          <input
+          {/* <input
             type="number"
             placeholder="Days..."
             value={deadline}
@@ -85,9 +85,11 @@ const App = () => {
             //   const number = Number(e.target.value);
             //   !isNaN(number) && alternativeChange(number);
             // }}
-          />
+          /> */}
         </div>
-        <button type="submit">&#9758;</button>
+        <button type="submit" className="addBtn">
+          &#9758;
+        </button>
       </form>
       <div className="tasksDisplay">
         <h2>Tasks go down here...</h2>
