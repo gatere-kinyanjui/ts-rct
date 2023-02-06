@@ -3,7 +3,7 @@ import "./App.css";
 import { ITask } from "./lib/Interfaces";
 import { nanoid } from "nanoid";
 import TodoTask from "./components/TodoTask/TodoTask";
-import allTodos, { createTodo } from "./lib/Funtions";
+import allTodos, { createTodo, deleteTodo } from "./lib/Funtions";
 
 const App = () => {
   const [task, setTask] = useState<string>("");
@@ -60,6 +60,15 @@ const App = () => {
   //   );
   // };
 
+  const handleDelete = (id: string) => {
+    console.log(id);
+    deleteTodo(id).then(() => {
+      setTodoList((prevTodoList) => [
+        ...prevTodoList.filter((todo) => todo.id !== id),
+      ]);
+    });
+  };
+
   return (
     <div className="App">
       <h1>theTodoRvstd</h1>
@@ -67,7 +76,7 @@ const App = () => {
         <div className="inputHeader">
           <input
             type="text"
-            placeholder="Add task..."
+            placeholder="Add a task..."
             value={task}
             name="task"
             // required
@@ -92,9 +101,11 @@ const App = () => {
         </button>
       </form>
       <div className="tasksDisplay">
-        <h2>Tasks go down here...</h2>
+        <h3>I plan to</h3>
         {todoList.map((task: ITask) => {
-          return <TodoTask task={task} key={task.id} />;
+          return (
+            <TodoTask task={task} key={task.id} handleDelete={handleDelete} />
+          );
         })}
       </div>
     </div>
