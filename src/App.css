@@ -4,13 +4,6 @@
   box-sizing: border-box;
 }
 
-.App {
-  display: flex;
-  gap: 5rem;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -20,6 +13,13 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
+}
+
+.App {
+  display: flex;
+  gap: 5rem;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .headerContainer {
@@ -33,15 +33,16 @@
   display: flex;
 }
 
-input {
+.taskInput {
   flex: 1;
   outline: none;
   border: none;
   padding: 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border-bottom: 1px solid yellowgreen;
   width: 100%;
-  flex: 1 1 40ch;
+  font-family: system-ui;
+  /* flex: 1 1 40ch; */
 }
 
 .addBtn {
@@ -53,7 +54,7 @@ input {
   font-size: 2rem;
   background-color: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.3s ease-in-out;
 }
 
 .addBtn:hover {
@@ -72,12 +73,39 @@ button:focus-visible {
   align-items: center;
 }
 
+.incompleteTasks {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.delete {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.uncheck {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 100;
+}
+
+.completeTasks {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
 .todoTaskContainer {
   justify-content: space-between;
   display: flex;
   margin: 2rem;
   align-items: center;
-  flex-flow: row wrap;
+  flex-flow: row;
   background-color: rgb(231 255 209);
   width: 400px;
   border-radius: 0.5rem;
@@ -86,8 +114,60 @@ button:focus-visible {
   color: none;
 }
 
-.taskName {
+/* .contentContainer {
+  display: flex;
+  flex-flow: row;
+} */
+
+label {
+  /* background-color: rgb(153, 209, 115); */
+  display: flex;
+  cursor: pointer;
   margin-left: 1rem;
+  align-items: center;
+}
+
+label > input[type="checkbox"]:checked {
+  background-color: rgb(209, 44, 71);
+}
+
+span {
+  margin: 0 0 0 0.5em;
+}
+
+/* .taskName {
+} */
+
+.uncheckAll {
+  border: none;
+  background-color: inherit;
+  color: rgb(160, 105, 105);
+  size: 20;
+  font-size: x-large;
+  border-radius: 8px;
+  /* color: transparent; */
+  cursor: pointer;
+}
+
+.uncheckAll:hover {
+  color: red;
+  transition: all 0.3s ease-in-out;
+}
+
+.deleteAll {
+  border: none;
+  background-color: inherit;
+  color: rgb(160, 105, 105);
+  size: 20;
+  font-size: x-large;
+  border-radius: 8px;
+  /* color: transparent; */
+  cursor: pointer;
+}
+
+.deleteAll:hover {
+  color: red;
+  transition: all 0.3s ease-in-out;
 }
 .deleteBtn {
   background-color: inherit;
@@ -104,7 +184,8 @@ button:focus-visible {
   color: transparent;
 }
 .deleteBtn:hover {
-  color: black;
+  color: red;
+  transition: all 0.5s ease-in-out;
 }
 
 /* .todoTaskContainer .contentContainer {
