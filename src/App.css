@@ -40,7 +40,7 @@
   padding: 1rem;
   font-size: 1rem;
   border-bottom: 1px solid yellowgreen;
-  width: 100%;
+  width: 400px;
   font-family: system-ui;
   /* flex: 1 1 40ch; */
 }
@@ -80,14 +80,14 @@ button:focus-visible {
 }
 
 .delete {
-  width: 400px;
+  width: 600px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .uncheck {
-  width: 400px;
+  width: 600px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -107,7 +107,7 @@ button:focus-visible {
   align-items: center;
   flex-flow: row;
   background-color: rgb(231 255 209);
-  width: 400px;
+  width: 600px;
   border-radius: 0.5rem;
   font-size: 1rem;
   font-weight: normal;
@@ -141,7 +141,7 @@ span {
 .uncheckAll {
   border: none;
   background-color: inherit;
-  color: rgb(160, 105, 105);
+  color: rgb(77, 175, 52);
   size: 20;
   font-size: x-large;
   border-radius: 8px;
@@ -150,7 +150,7 @@ span {
 }
 
 .uncheckAll:hover {
-  color: red;
+  color: rgb(202, 152, 15);
   transition: all 0.3s ease-in-out;
 }
 

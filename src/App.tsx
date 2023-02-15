@@ -2,7 +2,7 @@ import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import "./App.css";
 import { ITask, TodoStatuses } from "./lib/Interfaces";
 import { nanoid } from "nanoid";
-import allTodos, {
+import {
   createTodo,
   deleteTodo,
   fetchIncomplete,
@@ -11,11 +11,12 @@ import allTodos, {
 } from "./lib/Funtions";
 import Incomplete from "./components/Incomplete/Incomplete";
 import Complete from "./components/Complete/Complete";
+import AddTodo from "./components/AddTodo/AddTodo";
 
 const App = () => {
-  const [task, setTask] = useState<string>("");
-  const [deadline, setDeadline] = useState<number>(0);
-  const [todoList, setTodoList] = useState<ITask[]>([]);
+  // const [task, setTask] = useState<string>("");
+  // const [deadline, setDeadline] = useState<number>(0);
+  // const [todoList, setTodoList] = useState<ITask[]>([]);
   const [incompleteTodos, setIncompleteTodos] = useState<ITask[]>([]);
   const [completeTodos, setCompleteTodos] = useState<ITask[]>([]);
 
@@ -31,71 +32,46 @@ const App = () => {
     fetchIncomplete().then((res) => setIncompleteTodos(res));
     fetchComplete().then((res) => setCompleteTodos(res));
 
-    allTodos().then((res) => {
-      console.log("side effect init!");
-      setTodoList(res);
-    });
+    // allTodos().then((res) => {
+    //   console.log("side effect init!");
+    //   setTodoList(res);
+    // });
   }, []);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    if (e.target.name === "task") {
-      setTask(e.target.value);
-    } else {
-      setDeadline(Number(e.target.value));
-    }
-  };
-
   // use prev value when setting the todo list
-  const handleAdd = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const newTask = {
-      taskName: task,
-      deadline: deadline,
-      id: nanoid(),
-      status: TodoStatuses.incomplete,
-    };
-    createTodo(newTask).then(() => {
-      setTask("");
-      setDeadline(0);
-    });
-    setIncompleteTodos((prev) => [...prev, newTask]);
-    console.log(newTask);
+  const handleAdd = (todo: ITask, status: TodoStatuses) => {
+    status === TodoStatuses.incomplete
+      ? setIncompleteTodos((prev) => [todo, ...prev])
+      : setCompleteTodos((prev) => [todo, ...prev]);
   };
 
-  const handleStatus = (task: ITask) => {
-    const { id, status } = task;
+  const removeIncompleteTodo = (id: string) => {
+    setIncompleteTodos((prev) => [...prev.filter((todo) => todo.id !== id)]);
+  };
+
+  const removeCompleteTodo = (id: string) => {
+    setCompleteTodos((prev) => [...prev.filter((todo) => todo.id !== id)]);
+  };
+
+  const handleStatus = (todo: ITask) => {
+    const { id, status } = todo;
     if (status === TodoStatuses.incomplete) {
-      updateTodoStatus(id, TodoStatuses.complete).then(() => {
-        setIncompleteTodos((prev) => [task, ...prev]);
+      updateTodoStatus(id, TodoStatuses.incomplete).then(() => {
+        removeCompleteTodo(id);
+        setIncompleteTodos((prev) => [todo, ...prev]);
       });
     } else {
-      updateTodoStatus(id, TodoStatuses.incomplete).then(() => {
-        setCompleteTodos((prev) => [task, ...prev]);
+      updateTodoStatus(id, TodoStatuses.complete).then(() => {
+        removeIncompleteTodo(id);
+        setCompleteTodos((prev) => [todo, ...prev]);
       });
     }
   };
-
-  // const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-
-  //   console.log(e);
-  // };
-
-  //complete task then filter
-  // const completeTask = (taskNameToDelete: string) => {
-  //   setTodoList(
-  //     todoList.filter((task) => {
-  //       return task.taskName != taskNameToDelete;
-  //     })
-  //   );
-  // };
 
   const handleDeleteTask = (id: string) => {
     console.log(id);
     deleteTodo(id).then(() => {
-      setTodoList((prevTodoList) => [
-        ...prevTodoList.filter((todo) => todo.id !== id),
-      ]);
+      setIncompleteTodos((prev) => [...prev.filter((todo) => todo.id !== id)]);
     });
   };
 
@@ -106,35 +82,8 @@ const App = () => {
   return (
     <div className="App">
       <h1>theTodoRvstd</h1>
-      <form className="headerContainer" onSubmit={handleAdd}>
-        <div className="inputHeader">
-          <input
-            className="taskInput"
-            type="text"
-            placeholder="Add a task..."
-            value={task}
-            name="task"
-            // required
-            onChange={handleChange}
-            // onChange={(e) => alternativeChange(e.target.value)}
-          />
-          {/* <input
-            type="number"
-            placeholder="Days..."
-            value={deadline}
-            name="deadline"
-            // required
-            onChange={handleChange}
-            // onChange={(e) => {
-            //   const number = Number(e.target.value);
-            //   !isNaN(number) && alternativeChange(number);
-            // }}
-          /> */}
-        </div>
-        <button type="submit" className="addBtn">
-          &#9758;
-        </button>
-      </form>
+      <AddTodo handleAdd={handleAdd} />
+
       <div className="tasksDisplay">
         <div className="incompleteTasks">
           <div className="delete">
@@ -146,32 +95,24 @@ const App = () => {
               &#10006;
             </button>
           </div>
-          {incompleteTodos.map((task: ITask) => {
-            return (
-              <Incomplete
-                task={task}
-                key={task.id}
-                handleDeleteTask={handleDeleteTask}
-                handleStatus={handleStatus}
-              />
-            );
-          })}
+          <Incomplete
+            todos={incompleteTodos}
+            handleDeleteTask={handleDeleteTask}
+            handleStatus={handleStatus}
+          />
         </div>
+
         <div className="completeTasks">
           <div className="uncheck">
             <h3>I'm done with</h3>
             <button className="uncheckAll">&#10004;</button>
           </div>
-          {completeTodos.map((task: ITask) => {
-            return (
-              <Complete
-                task={task}
-                key={task.id}
-                handleDeleteTask={handleDeleteTask}
-                handleStatus={handleStatus}
-              />
-            );
-          })}
+
+          <Complete
+            todos={completeTodos}
+            handleDeleteTask={handleDeleteTask}
+            handleStatus={handleStatus}
+          />
         </div>
       </div>
     </div>
