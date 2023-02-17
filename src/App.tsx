@@ -53,20 +53,25 @@ const App = () => {
     setCompleteTodos((prev) => [...prev.filter((todo) => todo.id !== id)]);
   };
 
-  const handleStatus = (todo: ITask) => {
+  function handleStatus(todo: ITask) {
     const { id, status } = todo;
+
     if (status === TodoStatuses.incomplete) {
-      updateTodoStatus(id, TodoStatuses.incomplete).then(() => {
-        removeCompleteTodo(id);
-        setIncompleteTodos((prev) => [todo, ...prev]);
-      });
-    } else {
+      console.log(status, id);
+
       updateTodoStatus(id, TodoStatuses.complete).then(() => {
         removeIncompleteTodo(id);
         setCompleteTodos((prev) => [todo, ...prev]);
       });
+    } else {
+      console.log(status, id);
+
+      updateTodoStatus(id, TodoStatuses.incomplete).then(() => {
+        removeCompleteTodo(id);
+        setIncompleteTodos((prev) => [todo, ...prev]);
+      });
     }
-  };
+  }
 
   const handleDeleteTask = (id: string) => {
     console.log(id);
