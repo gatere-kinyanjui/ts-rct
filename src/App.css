@@ -59,7 +59,7 @@
 
 .addBtn:hover {
   border-color: #3fc5688c;
-  background-color: yellowgreen;
+  background-color: rgb(168, 230, 55);
 }
 
 /* button:focus,
@@ -141,7 +141,7 @@ span {
 .uncheckAll {
   border: none;
   background-color: inherit;
-  color: rgb(77, 175, 52);
+  color: rgb(194, 245, 181);
   size: 20;
   font-size: x-large;
   border-radius: 8px;
@@ -150,14 +150,14 @@ span {
 }
 
 .uncheckAll:hover {
-  color: rgb(202, 152, 15);
+  color: rgb(76, 194, 47);
   transition: all 0.3s ease-in-out;
 }
 
 .deleteAll {
   border: none;
   background-color: inherit;
-  color: rgb(160, 105, 105);
+  color: rgb(247, 176, 176);
   size: 20;
   font-size: x-large;
   border-radius: 8px;
