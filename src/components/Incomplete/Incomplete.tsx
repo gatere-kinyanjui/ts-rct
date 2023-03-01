@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 import { ITask, TodoStatuses } from "../../lib/Interfaces";
 import { deleteTodo } from "../../lib/Funtions";
 
@@ -9,7 +9,11 @@ interface Props {
   // completeTask(taskToNameDelete: string): void;
 }
 
-const Incomplete = ({ todos, handleDeleteTask, handleStatus }: Props) => {
+function Incomplete({ todos, handleDeleteTask, handleStatus }: Props) {
+  const editMode = () => {
+    console.log("edit mode");
+  };
+
   return (
     // <div className="megaWrapper">
     //   {todos.length ? (
@@ -18,13 +22,23 @@ const Incomplete = ({ todos, handleDeleteTask, handleStatus }: Props) => {
         <div key={todo.id} className="todoTaskContainer">
           <label htmlFor={todo.id}>
             <input
+              className="checkbox"
               type="checkbox"
               id={todo.id}
               // checked={todo.status === TodoStatuses.complete}
               onChange={(e) => handleStatus(todo)}
             />
-            <span className="todoName">{todo.taskName}</span>
+            <span
+              // contentEditable={true}
+              // suppressContentEditableWarning={true}
+              className="todoName"
+              onFocus={editMode}
+            >
+              {/* {" "} */}
+              {todo.taskName}
+            </span>
           </label>
+
           {/* <span>{task.deadline}</span> */}
           <button
             className="deleteBtn"
@@ -43,6 +57,6 @@ const Incomplete = ({ todos, handleDeleteTask, handleStatus }: Props) => {
     //   )}
     // </div>
   );
-};
+}
 
 export default Incomplete;

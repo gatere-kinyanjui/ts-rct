@@ -7,7 +7,7 @@ interface Props {
   handleAdd: (todo: ITask, status: TodoStatuses) => void;
 }
 
-const AddTodo = ({ handleAdd }: Props) => {
+function AddTodo({ handleAdd }: Props) {
   const [taskName, setTaskName] = useState<string>("");
   const [deadline, setDeadline] = useState<number>(0);
 
@@ -47,6 +47,7 @@ const AddTodo = ({ handleAdd }: Props) => {
           name="taskName"
           onChange={handleChange}
           required
+          autoComplete="off"
         />
       </div>
       <button type="submit" className="addBtn">
@@ -54,6 +55,6 @@ const AddTodo = ({ handleAdd }: Props) => {
       </button>
     </form>
   );
-};
+}
 
 export default AddTodo;

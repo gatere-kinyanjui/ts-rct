@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@300;400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +10,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  font-family: system-ui;
+  font-family: "Comfortaa", cursive;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -39,9 +40,10 @@
   border: none;
   padding: 1rem;
   font-size: 1rem;
-  border-bottom: 1px solid yellowgreen;
+  border-bottom: 1px solid rgb(166, 233, 31);
   width: 400px;
-  font-family: system-ui;
+  background-color: inherit;
+  color: black;
   /* flex: 1 1 40ch; */
 }
 
@@ -104,11 +106,12 @@ button:focus-visible {
   justify-content: space-between;
   display: flex;
   margin: 2rem;
+  padding-block: 0.3rem;
   align-items: center;
   flex-flow: row;
   background-color: rgb(231 255 209);
   width: 600px;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   font-size: 1rem;
   font-weight: normal;
   color: none;
@@ -127,12 +130,14 @@ label {
   align-items: center;
 }
 
-label > input[type="checkbox"]:checked {
+/* label > input[type="checkbox"]:checked {
   background-color: rgb(209, 44, 71);
-}
+} */
 
 span {
   margin: 0 0 0 0.5em;
+  outline: none;
+  text-align: justify;
 }
 
 /* .taskName {
@@ -206,7 +211,7 @@ span {
   border-right: none;
   background-color: tomato;
 }
-
+l
 .todoTaskContainer button {
   flex: 20%;
   height: 100%;
@@ -217,26 +222,3 @@ span {
   color: white;
   cursor: pointer;
 } */
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}

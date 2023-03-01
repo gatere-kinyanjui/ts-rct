@@ -42,7 +42,13 @@ export async function deleteTodo(id: string) {
 }
 
 //updating todo status
-export async function updateTodoStatus(id: string, status: TodoStatuses) {
+export async function updateTodoStatus({
+  id,
+  status,
+}: {
+  id: string;
+  status: TodoStatuses;
+}): Promise<Response> {
   return fetch(`${url}/todos/${id}`, {
     method: "PATCH",
     headers: { Accept: "application/json", "Content-Type": "application/json" },

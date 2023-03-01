@@ -13,7 +13,7 @@ import Incomplete from "./components/Incomplete/Incomplete";
 import Complete from "./components/Complete/Complete";
 import AddTodo from "./components/AddTodo/AddTodo";
 
-const App = () => {
+function App() {
   // const [task, setTask] = useState<string>("");
   // const [deadline, setDeadline] = useState<number>(0);
   // const [todoList, setTodoList] = useState<ITask[]>([]);
@@ -27,7 +27,6 @@ const App = () => {
   //     setDeadline(text);
   //   }
   // };
-
   useEffect(() => {
     fetchIncomplete().then((res) => setIncompleteTodos(res));
     fetchComplete().then((res) => setCompleteTodos(res));
@@ -59,14 +58,14 @@ const App = () => {
     if (status === TodoStatuses.incomplete) {
       console.log(status, id);
 
-      updateTodoStatus(id, TodoStatuses.complete).then(() => {
+      updateTodoStatus({ id, status: TodoStatuses.complete }).then(() => {
         removeIncompleteTodo(id);
         setCompleteTodos((prev) => [todo, ...prev]);
       });
     } else {
       console.log(status, id);
 
-      updateTodoStatus(id, TodoStatuses.incomplete).then(() => {
+      updateTodoStatus({ id, status: TodoStatuses.incomplete }).then(() => {
         removeCompleteTodo(id);
         setIncompleteTodos((prev) => [todo, ...prev]);
       });
@@ -122,6 +121,6 @@ const App = () => {
       </div>
     </div>
   );
-};
+}
 
 export default App;

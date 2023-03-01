@@ -9,7 +9,7 @@ interface Props {
   // completeTask(taskToNameDelete: string): void;
 }
 
-const Complete = ({ todos, handleDeleteTask, handleStatus }: Props) => {
+function Complete({ todos, handleDeleteTask, handleStatus }: Props) {
   return (
     // <div className="megaWrapper">
     //   {todos.length ? (
@@ -18,6 +18,7 @@ const Complete = ({ todos, handleDeleteTask, handleStatus }: Props) => {
         <div key={todo.id} className="todoTaskContainer">
           <label htmlFor={todo.id}>
             <input
+              className="checkbox"
               type="checkbox"
               id={todo.id}
               // checked={todo.status === TodoStatuses.incomplete}
@@ -43,6 +44,6 @@ const Complete = ({ todos, handleDeleteTask, handleStatus }: Props) => {
     //   )}
     // </div>
   );
-};
+}
 
 export default Complete;

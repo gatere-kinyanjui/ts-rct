@@ -4,13 +4,13 @@
       "taskName": "Shopping",
       "deadline": 30,
       "id": "deFdKzUAV5wAa7L_8Ru8-",
-      "status": "incomplete"
+      "status": "complete"
     },
     {
       "taskName": "Something new",
       "deadline": 0,
       "id": "6n2iwWOhQd7CNWiUkeC2h",
-      "status": "incomplete"
+      "status": "complete"
     },
     {
       "taskName": "Go up!",
@@ -27,7 +27,7 @@
       "taskName": "How many words can a task take so far?",
       "deadline": 0,
       "id": "wGd89PnndSbY8pK5kXaB2",
-      "status": "incomplete"
+      "status": "complete"
     },
     {
       "taskName": "",
@@ -38,7 +38,7 @@
       "taskName": "ADD ME TO SEE IF CHECKED WORKS",
       "deadline": 0,
       "id": "oE52QVpwm2EL0NRGl9BbL",
-      "status": "incomplete"
+      "status": "complete"
     },
     {
       "taskName": "One more to still check if the separation works",
@@ -56,7 +56,7 @@
       "taskName": "Try adding me",
       "deadline": 0,
       "id": "kmvk0HUsSNauzIhKqXKPL",
-      "status": "incomplete"
+      "status": "complete"
     },
     {
       "taskName": "Where shall I go?",
@@ -86,19 +86,19 @@
       "id": "VsdsuflakEkYwvM6KziC-",
       "taskName": "Another first task",
       "deadline": 0,
-      "status": "incomplete"
+      "status": "complete"
     },
     {
       "id": "OFnIFK53jFRzg5_Ls8ADi",
       "taskName": "First task 2",
       "deadline": 0,
-      "status": "incomplete"
+      "status": "complete"
     },
     {
       "id": "kHo5IRsmG7-KE8YlAF7te",
       "taskName": "ADD",
       "deadline": 0,
-      "status": "incomplete"
+      "status": "complete"
     },
     {
       "id": "8p9apYcg6euRoNOZiDPKA",
@@ -147,6 +147,48 @@
       "taskName": "Karani's task",
       "deadline": 0,
       "status": "complete"
+    },
+    {
+      "id": "zWGNXETHevV_vb_qPzFuJ",
+      "taskName": "what to do",
+      "deadline": 0,
+      "status": "incomplete"
+    },
+    {
+      "id": "84mK4KvW4a2RsQ3uQ3lGQ",
+      "taskName": "Jumping rope",
+      "deadline": 0,
+      "status": "incomplete"
+    },
+    {
+      "id": "eXeGqCpE40RasSGq6M7-m",
+      "taskName": "Swim classes",
+      "deadline": 0,
+      "status": "incomplete"
+    },
+    {
+      "id": "ckRK22yiVtSHZXRDWUR6c",
+      "taskName": "Karani's task back again",
+      "deadline": 0,
+      "status": "incomplete"
+    },
+    {
+      "id": "tp_h0GIHH-RTNH6dZKrc-",
+      "taskName": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate               quod dolorem illo perspiciatis. Aut exercitationem, laborum               voluptate rerum eos a delectus ratione, dolorem quas ipsam, ab               veritatis vel deserunt accusantium!",
+      "deadline": 0,
+      "status": "complete"
+    },
+    {
+      "id": "j7jnIQEhxCZCIOCTJAE2X",
+      "taskName": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate               quod dolorem illo perspiciatis. Aut exercitationem, laborum               voluptate rerum eos a delectus ratione, dolorem quas ipsam, ab               veritatis vel deserunt accusantium!",
+      "deadline": 0,
+      "status": "incomplete"
+    },
+    {
+      "id": "MRwAw_8u7BP8b0s6bXXHP",
+      "taskName": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate               quod dolorem illo perspiciatis. Aut exercitationem, laborum               voluptate rerum eos a delectus ratione, dolorem quas ipsam, ab veritatis vel deserunt accusantium!",
+      "deadline": 0,
+      "status": "incomplete"
     }
   ],
   "users": [
