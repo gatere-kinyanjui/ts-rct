@@ -44,6 +44,7 @@
   width: 400px;
   background-color: inherit;
   color: black;
+  font-family: "Comfortaa", cursive;
   /* flex: 1 1 40ch; */
 }
 
@@ -56,7 +57,8 @@
   font-size: 2rem;
   background-color: inherit;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  content: \002B;
 }
 
 .addBtn:hover {
@@ -81,11 +83,12 @@ button:focus-visible {
   align-items: center;
 }
 
-.delete {
+.deleteOrEdit {
   width: 600px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .uncheck {
@@ -143,6 +146,22 @@ span {
 /* .taskName {
 } */
 
+.editMode {
+  border: none;
+  background-color: inherit;
+  color: rgb(194, 245, 181);
+  size: 20;
+  font-size: x-large;
+  border-radius: 8px;
+  color: rgb(255, 187, 0);
+  cursor: pointer;
+}
+
+.editMode:hover {
+  color: rgb(197, 195, 42);
+  transition: all 0.3s ease-in-out;
+}
+
 .uncheckAll {
   border: none;
   background-color: inherit;
@@ -193,6 +212,23 @@ span {
   transition: all 0.5s ease-in-out;
 }
 
+/* MODAL STYLES */
+.modalContainer {
+  display: none;
+  position: fixed;
+  width: 100%;
+  min-width: 300px;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.confirmEditedTodo {
+  content: "\2713";
+}
+.cancelEditedTodo {
+  content: \2093;
+}
+
 /* .todoTaskContainer .contentContainer {
   flex: 80%;
   height: 100%;
@@ -221,4 +257,4 @@ l
   border-bottom-right-radius: 8px;
   color: white;
   cursor: pointer;
-} */
+} */ ;

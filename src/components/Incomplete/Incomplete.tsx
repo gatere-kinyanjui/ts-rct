@@ -10,10 +10,6 @@ interface Props {
 }
 
 function Incomplete({ todos, handleDeleteTask, handleStatus }: Props) {
-  const editMode = () => {
-    console.log("edit mode");
-  };
-
   return (
     // <div className="megaWrapper">
     //   {todos.length ? (
@@ -28,15 +24,7 @@ function Incomplete({ todos, handleDeleteTask, handleStatus }: Props) {
               // checked={todo.status === TodoStatuses.complete}
               onChange={(e) => handleStatus(todo)}
             />
-            <span
-              // contentEditable={true}
-              // suppressContentEditableWarning={true}
-              className="todoName"
-              onFocus={editMode}
-            >
-              {/* {" "} */}
-              {todo.taskName}
-            </span>
+            <span className="todoName">{todo.taskName}</span>
           </label>
 
           {/* <span>{task.deadline}</span> */}

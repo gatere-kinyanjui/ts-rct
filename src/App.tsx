@@ -12,6 +12,7 @@ import {
 import Incomplete from "./components/Incomplete/Incomplete";
 import Complete from "./components/Complete/Complete";
 import AddTodo from "./components/AddTodo/AddTodo";
+import Modal from "./components/Modal/Modal";
 
 function App() {
   // const [task, setTask] = useState<string>("");
@@ -52,7 +53,7 @@ function App() {
     setCompleteTodos((prev) => [...prev.filter((todo) => todo.id !== id)]);
   };
 
-  function handleStatus(todo: ITask) {
+  const handleStatus = (todo: ITask) => {
     const { id, status } = todo;
 
     if (status === TodoStatuses.incomplete) {
@@ -70,7 +71,7 @@ function App() {
         setIncompleteTodos((prev) => [todo, ...prev]);
       });
     }
-  }
+  };
 
   const handleDeleteTask = (id: string) => {
     console.log(id);
@@ -83,6 +84,10 @@ function App() {
     console.log("one ring to rule them all!");
   };
 
+  const showEditModal = () => {
+    alert("i'm gon surface right here");
+  };
+
   return (
     <div className="App">
       <h1>theTodoRvstd</h1>
@@ -90,8 +95,11 @@ function App() {
 
       <div className="tasksDisplay">
         <div className="incompleteTasks">
-          <div className="delete">
+          <div className="deleteOrEdit">
             <h3>I plan to</h3>
+            <button className="editMode" onClick={showEditModal}>
+              &#9997;
+            </button>
             <button
               className="deleteAll"
               onClick={() => handleDeleteAllTasks()}
@@ -118,6 +126,8 @@ function App() {
             handleStatus={handleStatus}
           />
         </div>
+
+        <Modal />
       </div>
     </div>
   );

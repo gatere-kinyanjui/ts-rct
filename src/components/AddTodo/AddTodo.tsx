@@ -51,7 +51,8 @@ function AddTodo({ handleAdd }: Props) {
         />
       </div>
       <button type="submit" className="addBtn">
-        &#9758;
+        {/* &#9758; */}
+        &#43;
       </button>
     </form>
   );
