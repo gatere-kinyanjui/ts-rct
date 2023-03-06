@@ -12,7 +12,8 @@ import {
 import Incomplete from "./components/Incomplete/Incomplete";
 import Complete from "./components/Complete/Complete";
 import AddTodo from "./components/AddTodo/AddTodo";
-import Modal from "./components/Modal/Modal";
+
+import EditModal from "./components/EditModal/EditModal";
 
 function App() {
   // const [task, setTask] = useState<string>("");
@@ -20,6 +21,8 @@ function App() {
   // const [todoList, setTodoList] = useState<ITask[]>([]);
   const [incompleteTodos, setIncompleteTodos] = useState<ITask[]>([]);
   const [completeTodos, setCompleteTodos] = useState<ITask[]>([]);
+
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   // const alternativeChange = (text: string | number): void => {
   //   if (typeof text === "string") {
@@ -84,8 +87,19 @@ function App() {
     console.log("one ring to rule them all!");
   };
 
-  const showEditModal = () => {
-    alert("i'm gon surface right here");
+  // const showEditModal = () => {
+  //   setShowModal(true);
+  //   console.log("i'm gon surface right there");
+  // };
+  // const hideEditModal = () => {
+  //   setShowModal(false);
+  //   console.log("oops, i'm gone");
+  // };
+
+  const toggleEditModal = () => {
+    setShowModal(!showModal);
+
+    console.log("togglinnnng");
   };
 
   return (
@@ -97,7 +111,14 @@ function App() {
         <div className="incompleteTasks">
           <div className="deleteOrEdit">
             <h3>I plan to</h3>
-            <button className="editMode" onClick={showEditModal}>
+            <button
+              className="editMode"
+              onClick={
+                toggleEditModal
+                // showEditModal
+                // hideEditModal
+              }
+            >
               &#9997;
             </button>
             <button
@@ -126,8 +147,15 @@ function App() {
             handleStatus={handleStatus}
           />
         </div>
-
-        <Modal />
+        {/* <Modal isOpen={showModal}> */}
+        {showModal && (
+          <EditModal
+            toggleEditModal={toggleEditModal}
+            // showEditModal={showEditModal}
+            // hideEditModal={hideEditModal}
+          />
+        )}
+        {/* </Modal> */}
       </div>
     </div>
   );

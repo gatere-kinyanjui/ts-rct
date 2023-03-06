@@ -21,6 +21,8 @@
   gap: 5rem;
   flex-direction: column;
   flex-wrap: wrap;
+  /* width: 100%;
+  max-width: 600px; */
 }
 
 .headerContainer {
@@ -43,7 +45,7 @@
   border-bottom: 1px solid rgb(166, 233, 31);
   width: 400px;
   background-color: inherit;
-  color: black;
+  /* color: rgb(166, 233, 31); */
   font-family: "Comfortaa", cursive;
   /* flex: 1 1 40ch; */
 }
@@ -97,6 +99,8 @@ button:focus-visible {
   flex-direction: row;
   justify-content: space-between;
   font-weight: 100;
+  align-items: center;
+  align-content: center;
 }
 
 .completeTasks {
@@ -214,12 +218,17 @@ span {
 
 /* MODAL STYLES */
 .modalContainer {
-  display: none;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
   position: fixed;
   width: 100%;
-  min-width: 300px;
+  min-width: 400px;
+  height: 100%;
+  max-height: 400px;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: "Comfortaa", cursive;
 }
 
 .confirmEditedTodo {

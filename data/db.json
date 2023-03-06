@@ -140,7 +140,7 @@
       "id": "vInAjOo8rfhxb8_fgB1M2",
       "taskName": "Test",
       "deadline": 0,
-      "status": "incomplete"
+      "status": "complete"
     },
     {
       "id": "oq18tWd9nXEIcPeUg3b8p",
@@ -223,6 +223,24 @@
     {
       "id": "Jwurn1487HW8FJAGT9Vls",
       "taskName": "Print insurance sticker",
+      "deadline": 0,
+      "status": "incomplete"
+    },
+    {
+      "id": "rh6sqP-YzqsNVUXODshEO",
+      "taskName": "Surf",
+      "deadline": 0,
+      "status": "incomplete"
+    },
+    {
+      "id": "RU2dBSEtmpREbDLuhS2Kt",
+      "taskName": "Skiing",
+      "deadline": 0,
+      "status": "incomplete"
+    },
+    {
+      "id": "E_gAbRNVS6Krx7MAmgKlf",
+      "taskName": "just a task to test 'completed' with",
       "deadline": 0,
       "status": "incomplete"
     }
