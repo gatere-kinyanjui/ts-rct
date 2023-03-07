@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./EditModal.css";
 
 interface Props {
   // showEditModal: () => void;
@@ -12,20 +13,41 @@ function EditModal({
 // hideEditModal,
 Props) {
   return (
-    <div className="modalContainer">
-      <h4>Edit Todo</h4>
-      <input type="text" name="editedTodo" id="" placeholder="new todo name" />
-      <button
-        className="cancelEditedTodo"
-        type="reset"
-        // onClick={toggleEditModal}
-        onClick={toggleEditModal}
-      >
-        &#8339;
-      </button>
-      <button className="confirmEditedTodo" type="submit">
-        &#10003;
-      </button>
+    <div className="modalBackground">
+      <div className="modalContainer">
+        <div className="modalCloseButton">
+          <button onClick={toggleEditModal}>X</button>
+        </div>
+
+        <div className="modalTitle">
+          <h4>Edit Todo</h4>
+        </div>
+
+        <div className="modalBody">
+          <input
+            className="modalInput"
+            type="text"
+            name="editedTodo"
+            id=""
+            placeholder="new todo name"
+          />
+        </div>
+
+        <div className="modalFooter">
+          <button
+            className="cancelEditedTodo"
+            type="reset"
+            id="cancelBtn"
+            // onClick={toggleEditModal}
+            onClick={toggleEditModal}
+          >
+            &#9747;
+          </button>
+          <button className="confirmEditedTodo" type="submit">
+            &#10003;
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

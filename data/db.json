@@ -101,12 +101,6 @@
       "status": "complete"
     },
     {
-      "id": "8p9apYcg6euRoNOZiDPKA",
-      "taskName": "JUST CAME IN",
-      "deadline": 0,
-      "status": "incomplete"
-    },
-    {
       "id": "YtvI2dLayQyKXRrF78twN",
       "taskName": "Will I reflect?",
       "deadline": 0,
@@ -122,7 +116,7 @@
       "id": "Cu0TjqUwi9MnwOkQ14TIX",
       "taskName": "Call Sam again",
       "deadline": 0,
-      "status": "incomplete"
+      "status": "complete"
     },
     {
       "id": "nWN-fOt4T-U9Hzq61Zi6_",

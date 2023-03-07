@@ -1,19 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@300;400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-* {
+/* @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@300;400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Fuzzy+Bubbles:wght@400;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Space+Grotesk:wght@300;400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  font-family: "Comfortaa", cursive;
+  /* font-family: "Comfortaa", cursive; */
+  font-family: "Nunito", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
+
+  /* width: 100%;
+  height: 100%; */
 }
 
 .App {
@@ -21,8 +27,11 @@
   gap: 5rem;
   flex-direction: column;
   flex-wrap: wrap;
+
+  width: 100%;
+  /* max-width: 300px; */
   /* width: 100%;
-  max-width: 600px; */
+  height: 100%; */
 }
 
 .headerContainer {
@@ -46,7 +55,7 @@
   width: 400px;
   background-color: inherit;
   /* color: rgb(166, 233, 31); */
-  font-family: "Comfortaa", cursive;
+  font-family: "Nunito", sans-serif;
   /* flex: 1 1 40ch; */
 }
 
@@ -150,7 +159,7 @@ span {
 /* .taskName {
 } */
 
-.editMode {
+.editModeButton {
   border: none;
   background-color: inherit;
   color: rgb(194, 245, 181);
@@ -161,7 +170,7 @@ span {
   cursor: pointer;
 }
 
-.editMode:hover {
+.editModeButton:hover {
   color: rgb(197, 195, 42);
   transition: all 0.3s ease-in-out;
 }
@@ -214,28 +223,6 @@ span {
 .deleteBtn:hover {
   color: red;
   transition: all 0.5s ease-in-out;
-}
-
-/* MODAL STYLES */
-.modalContainer {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  position: fixed;
-  width: 100%;
-  min-width: 400px;
-  height: 100%;
-  max-height: 400px;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  font-family: "Comfortaa", cursive;
-}
-
-.confirmEditedTodo {
-  content: "\2713";
-}
-.cancelEditedTodo {
-  content: \2093;
 }
 
 /* .todoTaskContainer .contentContainer {

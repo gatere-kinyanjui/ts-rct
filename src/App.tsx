@@ -102,6 +102,12 @@ function App() {
     console.log("togglinnnng");
   };
 
+  if (showModal) {
+    document.body.classList.add("active-modal");
+  } else {
+    document.body.classList.remove("active-modal");
+  }
+
   return (
     <div className="App">
       <h1>theTodoRvstd</h1>
@@ -112,7 +118,7 @@ function App() {
           <div className="deleteOrEdit">
             <h3>I plan to</h3>
             <button
-              className="editMode"
+              className="editModeButton"
               onClick={
                 toggleEditModal
                 // showEditModal
