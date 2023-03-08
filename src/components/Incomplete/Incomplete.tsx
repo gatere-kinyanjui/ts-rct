@@ -6,10 +6,16 @@ interface Props {
   todos: ITask[];
   handleDeleteTask: (id: string) => void;
   handleStatus: (todo: ITask) => void;
+  toggleEditModal: () => void;
   // completeTask(taskToNameDelete: string): void;
 }
 
-function Incomplete({ todos, handleDeleteTask, handleStatus }: Props) {
+function Incomplete({
+  todos,
+  handleDeleteTask,
+  handleStatus,
+  toggleEditModal,
+}: Props) {
   return (
     // <div className="megaWrapper">
     //   {todos.length ? (
@@ -28,12 +34,19 @@ function Incomplete({ todos, handleDeleteTask, handleStatus }: Props) {
           </label>
 
           {/* <span>{task.deadline}</span> */}
-          <button
-            className="deleteBtn"
-            onClick={() => handleDeleteTask(todo.id)}
-          >
-            &#9747;
-          </button>
+
+          <div className="taskBtns">
+            <button className="editBtn" onClick={toggleEditModal}>
+              &#9998;
+            </button>
+
+            <button
+              className="deleteBtn"
+              onClick={() => handleDeleteTask(todo.id)}
+            >
+              &#9747;
+            </button>
+          </div>
         </div>
       ))}
     </div>

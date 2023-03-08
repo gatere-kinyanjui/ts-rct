@@ -1,18 +1,6 @@
 {
   "todos": [
     {
-      "taskName": "Shopping",
-      "deadline": 30,
-      "id": "deFdKzUAV5wAa7L_8Ru8-",
-      "status": "complete"
-    },
-    {
-      "taskName": "Something new",
-      "deadline": 0,
-      "id": "6n2iwWOhQd7CNWiUkeC2h",
-      "status": "complete"
-    },
-    {
       "taskName": "Go up!",
       "deadline": 0,
       "id": "EDybtMsQHkrNgZY6qzt_x"
@@ -75,12 +63,6 @@
       "deadline": 0,
       "id": "uH6qkEfA-S380NU2YyVuo",
       "status": "complete"
-    },
-    {
-      "id": "F7uEFL8tEdKS5z187wVNj",
-      "taskName": "First task",
-      "deadline": 0,
-      "status": "incomplete"
     },
     {
       "id": "VsdsuflakEkYwvM6KziC-",
@@ -235,6 +217,30 @@
     {
       "id": "E_gAbRNVS6Krx7MAmgKlf",
       "taskName": "just a task to test 'completed' with",
+      "deadline": 0,
+      "status": "incomplete"
+    },
+    {
+      "id": "69uwVWy-7lLX2AQBLQgzl",
+      "taskName": "I'm adding a task that I will try edit, and probably delete, who knows, but let see how much space it takes",
+      "deadline": 0,
+      "status": "incomplete"
+    },
+    {
+      "id": "JR3eGWzt8SOy870cYYjEf",
+      "taskName": "Network test",
+      "deadline": 0,
+      "status": "incomplete"
+    },
+    {
+      "id": "YT9ZqzNpA-TCYc2o6K8XI",
+      "taskName": "edit goals on tRD",
+      "deadline": 0,
+      "status": "incomplete"
+    },
+    {
+      "id": "09Vtt0ZZMR9p07-dBbO0L",
+      "taskName": "edit more goals on tRD",
       "deadline": 0,
       "status": "incomplete"
     }

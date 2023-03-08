@@ -68,13 +68,16 @@
   font-size: 2rem;
   background-color: inherit;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.8s ease-in-out;
   content: \002B;
+  width: 100%;
+  max-width: 50px;
 }
 
 .addBtn:hover {
-  border-color: #3fc5688c;
+  /* border-color: #3fc5688c; */
   background-color: rgb(168, 230, 55);
+  max-width: 100px;
 }
 
 /* button:focus,
@@ -178,7 +181,7 @@ span {
 .uncheckAll {
   border: none;
   background-color: inherit;
-  color: rgb(194, 245, 181);
+  color: rgb(231 255 209);
   size: 20;
   font-size: x-large;
   border-radius: 8px;
@@ -194,18 +197,21 @@ span {
 .deleteAll {
   border: none;
   background-color: inherit;
-  color: rgb(247, 176, 176);
+  color: rgb(231 255 209);
   size: 20;
   font-size: x-large;
   border-radius: 8px;
   /* color: transparent; */
   cursor: pointer;
 }
-
 .deleteAll:hover {
   color: red;
   transition: all 0.3s ease-in-out;
 }
+
+/* .taskBtns {
+} */
+
 .deleteBtn {
   background-color: inherit;
   height: auto;
@@ -218,10 +224,31 @@ span {
   cursor: pointer;
   transition: border-color 0.25s;
   text-decoration: none;
-  color: transparent;
+  color: rgb(245, 184, 105);
+  /* color: transparent; */
 }
 .deleteBtn:hover {
   color: red;
+  transition: all 0.5s ease-in-out;
+}
+
+.editBtn {
+  background-color: inherit;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.2rem 0.6rem;
+  font-weight: 200;
+  font-family: inherit;
+  font-size: 2rem;
+  cursor: text;
+  transition: border-color 0.25s;
+  text-decoration: none;
+  color: rgb(245, 184, 105);
+  /* color: transparent; */
+}
+.editBtn:hover {
+  color: rgb(77, 33, 0);
   transition: all 0.5s ease-in-out;
 }
 

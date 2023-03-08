@@ -7,11 +7,7 @@ interface Props {
   toggleEditModal: () => void;
 }
 
-function EditModal({
-  toggleEditModal,
-}: // showEditModal,
-// hideEditModal,
-Props) {
+function EditModal({ toggleEditModal }: Props) {
   return (
     <div className="modalBackground">
       <div className="modalContainer">
@@ -28,7 +24,6 @@ Props) {
             className="modalInput"
             type="text"
             name="editedTodo"
-            id=""
             placeholder="new todo name"
           />
         </div>
@@ -38,7 +33,6 @@ Props) {
             className="cancelEditedTodo"
             type="reset"
             id="cancelBtn"
-            // onClick={toggleEditModal}
             onClick={toggleEditModal}
           >
             &#9747;

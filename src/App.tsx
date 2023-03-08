@@ -98,8 +98,6 @@ function App() {
 
   const toggleEditModal = () => {
     setShowModal(!showModal);
-
-    console.log("togglinnnng");
   };
 
   if (showModal) {
@@ -117,27 +115,23 @@ function App() {
         <div className="incompleteTasks">
           <div className="deleteOrEdit">
             <h3>I plan to</h3>
-            <button
-              className="editModeButton"
-              onClick={
-                toggleEditModal
-                // showEditModal
-                // hideEditModal
-              }
-            >
+
+            {/* <button className="editModeButton" onClick={toggleEditModal}>
               &#9997;
-            </button>
+            </button> */}
+
             <button
               className="deleteAll"
               onClick={() => handleDeleteAllTasks()}
             >
-              &#10006;
+              &#10007;
             </button>
           </div>
           <Incomplete
             todos={incompleteTodos}
             handleDeleteTask={handleDeleteTask}
             handleStatus={handleStatus}
+            toggleEditModal={toggleEditModal}
           />
         </div>
 
