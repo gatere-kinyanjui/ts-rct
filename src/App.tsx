@@ -106,6 +106,17 @@ function App() {
     document.body.classList.remove("active-modal");
   }
 
+  const editTodo = (id: string, newTodoName: string) => {
+    const editedTodoList = incompleteTodos.map((todo) => {
+      if (id === todo.id) {
+        return { ...todo, name: newTodoName };
+      }
+      return todo;
+    });
+    setIncompleteTodos(editedTodoList);
+    console.log(id, newTodoName);
+  };
+
   return (
     <div className="App">
       <h1>theTodoRvstd</h1>
@@ -149,11 +160,7 @@ function App() {
         </div>
         {/* <Modal isOpen={showModal}> */}
         {showModal && (
-          <EditModal
-            toggleEditModal={toggleEditModal}
-            // showEditModal={showEditModal}
-            // hideEditModal={hideEditModal}
-          />
+          <EditModal toggleEditModal={toggleEditModal} editTodo={editTodo} />
         )}
         {/* </Modal> */}
       </div>

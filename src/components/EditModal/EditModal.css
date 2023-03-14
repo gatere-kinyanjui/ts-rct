@@ -19,8 +19,8 @@ body.active-modal {
   width: 500px;
   height: 500px;
   border-radius: 12px;
-  background-color: white;
-  background-color: rgba(240, 152, 93, 0.829);
+  /* background-color: rgba(236, 195, 167, 0.829); */
+  background-color: #e27d60;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   flex-direction: column;
@@ -61,7 +61,7 @@ body.active-modal {
   border: none;
   padding: 1rem;
   font-size: 1rem;
-  border-bottom: 1px solid rgb(166, 233, 31);
+  border-bottom: 1px solid #85dcb8;
   width: 400px;
   background-color: inherit;
   font-family: "Nunito", sans-serif;
@@ -79,7 +79,7 @@ body.active-modal {
   height: 45px;
   margin: 10px;
   border: none;
-  background-color: rgb(168, 230, 55);
+  background-color: #41b3a3;
   color: white;
   border-radius: 8px;
   font-size: 20px;

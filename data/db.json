@@ -89,12 +89,6 @@
       "status": "complete"
     },
     {
-      "id": "TGrZqci9DIgpZiLDkSSnE",
-      "taskName": "Can it be an instant add?",
-      "deadline": 0,
-      "status": "incomplete"
-    },
-    {
       "id": "Cu0TjqUwi9MnwOkQ14TIX",
       "taskName": "Call Sam again",
       "deadline": 0,
@@ -152,13 +146,13 @@
       "id": "tp_h0GIHH-RTNH6dZKrc-",
       "taskName": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate               quod dolorem illo perspiciatis. Aut exercitationem, laborum               voluptate rerum eos a delectus ratione, dolorem quas ipsam, ab               veritatis vel deserunt accusantium!",
       "deadline": 0,
-      "status": "complete"
+      "status": "incomplete"
     },
     {
       "id": "j7jnIQEhxCZCIOCTJAE2X",
       "taskName": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate               quod dolorem illo perspiciatis. Aut exercitationem, laborum               voluptate rerum eos a delectus ratione, dolorem quas ipsam, ab               veritatis vel deserunt accusantium!",
       "deadline": 0,
-      "status": "complete"
+      "status": "incomplete"
     },
     {
       "id": "MRwAw_8u7BP8b0s6bXXHP",
@@ -182,7 +176,7 @@
       "id": "OBdLypNI1_rBExPVk0rrN",
       "taskName": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quod dolorem illo perspiciatis. Aut exercitationem, laborum voluptate rerum eos a delectus ratione, dolorem quas ipsam, ab veritatis vel deserunt accusantium!",
       "deadline": 0,
-      "status": "incomplete"
+      "status": "complete"
     },
     {
       "id": "tU1-xOkqveBPQptfdYT_e",
@@ -194,7 +188,7 @@
       "id": "SilNgePFrwZOrst5ndvgd",
       "taskName": "Shopp for my g",
       "deadline": 0,
-      "status": "incomplete"
+      "status": "complete"
     },
     {
       "id": "Jwurn1487HW8FJAGT9Vls",
@@ -242,7 +236,19 @@
       "id": "09Vtt0ZZMR9p07-dBbO0L",
       "taskName": "edit more goals on tRD",
       "deadline": 0,
+      "status": "complete"
+    },
+    {
+      "id": "f3KoaOvU0PHGAwMpvSzTS",
+      "taskName": "ad me quick",
+      "deadline": 0,
       "status": "incomplete"
+    },
+    {
+      "id": "j5CD2guknOwQQ6sPuVa_5",
+      "taskName": "swimming",
+      "deadline": 0,
+      "status": "complete"
     }
   ],
   "users": [
