@@ -68,7 +68,7 @@
   font-size: 2rem;
   background-color: inherit;
   cursor: pointer;
-  transition: all 0.8s ease-in-out;
+  transition: all 0.4s ease-in-out;
   content: \002B;
   width: 100%;
   max-width: 50px;
@@ -176,7 +176,7 @@ span {
 
 .editModeButton:hover {
   color: rgb(197, 195, 42);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
 .uncheckAll {
@@ -192,7 +192,7 @@ span {
 
 .uncheckAll:hover {
   color: #41b3a3;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
 .deleteAll {
@@ -207,7 +207,7 @@ span {
 }
 .deleteAll:hover {
   color: red;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
 /* .taskBtns {
@@ -231,7 +231,7 @@ span {
 }
 .deleteBtn:hover {
   color: red;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
 .editBtn {

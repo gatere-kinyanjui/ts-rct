@@ -22,6 +22,7 @@ function App() {
   const [incompleteTodos, setIncompleteTodos] = useState<ITask[]>([]);
   const [completeTodos, setCompleteTodos] = useState<ITask[]>([]);
 
+  const [editingTodo, setEditingTodo] = useState<ITask | null>(null);
   const [showModal, setShowModal] = useState<boolean>(false);
 
   // const alternativeChange = (text: string | number): void => {
@@ -76,45 +77,45 @@ function App() {
     }
   };
 
-  const handleDeleteTask = (id: string) => {
+  const handleDeleteIncompleteTask = (id: string) => {
     console.log(id);
     deleteTodo(id).then(() => {
       setIncompleteTodos((prev) => [...prev.filter((todo) => todo.id !== id)]);
     });
   };
 
-  const handleDeleteAllTasks = () => {
-    console.log("one ring to rule them all!");
+  const handleDeleteCompleteTask = (id: string) => {
+    console.log(id);
+    deleteTodo(id).then(() => {
+      setCompleteTodos((prev) => [...prev.filter((todo) => todo.id !== id)]);
+    });
   };
 
-  // const showEditModal = () => {
-  //   setShowModal(true);
-  //   console.log("i'm gon surface right there");
-  // };
-  // const hideEditModal = () => {
-  //   setShowModal(false);
-  //   console.log("oops, i'm gone");
-  // };
+  const handleDeleteAllTasks = () => {
+    console.log("one delete to rule them all!");
+  };
 
-  const toggleEditModal = () => {
+  const toggleEditModal = (todo: ITask) => {
+    setEditingTodo(todo);
     setShowModal(!showModal);
   };
 
+  // PREVENTS MAIN UI FROM SCROLLING WHEN MODAL IS SHOWING
   if (showModal) {
     document.body.classList.add("active-modal");
   } else {
     document.body.classList.remove("active-modal");
   }
 
-  const editTodo = (id: string, newTodoName: string) => {
+  const editTodo = (id: string) => {
     const editedTodoList = incompleteTodos.map((todo) => {
       if (id === todo.id) {
-        return { ...todo, name: newTodoName };
+        return { ...todo };
       }
       return todo;
     });
     setIncompleteTodos(editedTodoList);
-    console.log(id, newTodoName);
+    console.log(id);
   };
 
   return (
@@ -126,11 +127,6 @@ function App() {
         <div className="incompleteTasks">
           <div className="deleteOrEdit">
             <h3>I plan to</h3>
-
-            {/* <button className="editModeButton" onClick={toggleEditModal}>
-              &#9997;
-            </button> */}
-
             <button
               className="deleteAll"
               onClick={() => handleDeleteAllTasks()}
@@ -140,7 +136,7 @@ function App() {
           </div>
           <Incomplete
             todos={incompleteTodos}
-            handleDeleteTask={handleDeleteTask}
+            handleDeleteIncompleteTask={handleDeleteIncompleteTask}
             handleStatus={handleStatus}
             toggleEditModal={toggleEditModal}
           />
@@ -154,13 +150,17 @@ function App() {
 
           <Complete
             todos={completeTodos}
-            handleDeleteTask={handleDeleteTask}
+            handleDeleteCompleteTask={handleDeleteCompleteTask}
             handleStatus={handleStatus}
           />
         </div>
         {/* <Modal isOpen={showModal}> */}
-        {showModal && (
-          <EditModal toggleEditModal={toggleEditModal} editTodo={editTodo} />
+        {showModal && editingTodo && (
+          <EditModal
+            toggleEditModal={toggleEditModal}
+            editTodo={editTodo}
+            todo={editingTodo}
+          />
         )}
         {/* </Modal> */}
       </div>

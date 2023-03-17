@@ -4,12 +4,11 @@ import { deleteTodo } from "../../lib/Funtions";
 
 interface Props {
   todos: ITask[];
-  handleDeleteTask: (id: string) => void;
+  handleDeleteCompleteTask: (id: string) => void;
   handleStatus: (todo: ITask) => void;
-  // completeTask(taskToNameDelete: string): void;
 }
 
-function Complete({ todos, handleDeleteTask, handleStatus }: Props) {
+function Complete({ todos, handleDeleteCompleteTask, handleStatus }: Props) {
   return (
     // <div className="megaWrapper">
     //   {todos.length ? (
@@ -29,7 +28,7 @@ function Complete({ todos, handleDeleteTask, handleStatus }: Props) {
           {/* <span>{task.deadline}</span> */}
           <button
             className="deleteBtn"
-            onClick={() => handleDeleteTask(todo.id)}
+            onClick={() => handleDeleteCompleteTask(todo.id)}
           >
             &#9747;
           </button>

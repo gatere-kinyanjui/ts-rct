@@ -5,24 +5,27 @@ import { ITask, TodoStatuses } from "../../lib/Interfaces";
 interface Props {
   // showEditModal: () => void;
   // hideEditModal: () => void;
-  toggleEditModal: () => void;
-  editTodo: any;
+  toggleEditModal: (todo: ITask) => void;
+  editTodo: (id: string) => void;
+  todo: ITask;
 }
 
-function EditModal({ toggleEditModal, editTodo }: Props) {
-  const [newTodoName, setNewTodoName] = useState<string>();
+function EditModal({ toggleEditModal, editTodo, todo }: Props) {
+  const { taskName, id } = todo;
+
+  const [newTodoName, setNewTodoName] = useState<string>(taskName);
 
   const handleEdit = (e: ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
     setNewTodoName(e.target.value);
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    editTodo(newTodoName);
+    editTodo(id);
     setNewTodoName("");
+    toggleEditModal(todo);
 
-    console.log(newTodoName);
+    // console.log(newTodoName);
   };
 
   return (
@@ -30,7 +33,7 @@ function EditModal({ toggleEditModal, editTodo }: Props) {
       <div className="modalBackground">
         <div className="modalContainer">
           <div className="modalCloseButton">
-            <button onClick={toggleEditModal}>X</button>
+            <button onClick={() => toggleEditModal(todo)}>X</button>
           </div>
 
           <div className="modalTitle">
@@ -55,7 +58,7 @@ function EditModal({ toggleEditModal, editTodo }: Props) {
               className="cancelEditedTodo"
               type="reset"
               id="cancelBtn"
-              onClick={toggleEditModal}
+              onClick={() => toggleEditModal(todo)}
             >
               &#9747;
             </button>

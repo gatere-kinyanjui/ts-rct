@@ -4,15 +4,15 @@ import { deleteTodo } from "../../lib/Funtions";
 
 interface Props {
   todos: ITask[];
-  handleDeleteTask: (id: string) => void;
+  handleDeleteIncompleteTask: (id: string) => void;
   handleStatus: (todo: ITask) => void;
-  toggleEditModal: () => void;
+  toggleEditModal: (todo: ITask) => void;
   // completeTask(taskToNameDelete: string): void;
 }
 
 function Incomplete({
   todos,
-  handleDeleteTask,
+  handleDeleteIncompleteTask,
   handleStatus,
   toggleEditModal,
 }: Props) {
@@ -36,13 +36,13 @@ function Incomplete({
           {/* <span>{task.deadline}</span> */}
 
           <div className="taskBtns">
-            <button className="editBtn" onClick={toggleEditModal}>
+            <button className="editBtn" onClick={() => toggleEditModal(todo)}>
               &#9998;
             </button>
 
             <button
               className="deleteBtn"
-              onClick={() => handleDeleteTask(todo.id)}
+              onClick={() => handleDeleteIncompleteTask(todo.id)}
             >
               &#9747;
             </button>
