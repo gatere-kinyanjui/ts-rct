@@ -107,10 +107,10 @@ function App() {
     document.body.classList.remove("active-modal");
   }
 
-  const editTodo = (id: string) => {
+  const editTodo = (id: string, newTodoName: string) => {
     const editedTodoList = incompleteTodos.map((todo) => {
       if (id === todo.id) {
-        return { ...todo };
+        return { ...todo, ...{ taskName: newTodoName } };
       }
       return todo;
     });
