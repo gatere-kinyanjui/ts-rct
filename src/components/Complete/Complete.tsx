@@ -1,6 +1,6 @@
 import React from "react";
 import { ITask, TodoStatuses } from "../../lib/Interfaces";
-import { deleteTodo } from "../../lib/Funtions";
+import { deleteTodo } from "../../lib/DatabaseService";
 
 interface Props {
   todos: ITask[];

@@ -1,7 +1,7 @@
 import { useState, FormEvent, ChangeEvent } from "react";
 import { ITask, TodoStatuses } from "../../lib/Interfaces";
 import { nanoid } from "nanoid";
-import { createTodo } from "../../lib/Funtions";
+import { createTodo } from "../../lib/DatabaseService";
 
 interface Props {
   handleAdd: (todo: ITask, status: TodoStatuses) => void;

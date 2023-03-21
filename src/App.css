@@ -51,7 +51,7 @@
   border: none;
   padding: 1rem;
   font-size: 1rem;
-  border-bottom: 1px solid #85dcb8;
+  border-bottom: 1px solid #b5c99a;
   width: 400px;
   background-color: inherit;
   /* color: rgb(166, 233, 31); */
@@ -76,7 +76,7 @@
 
 .addBtn:hover {
   /* border-color: #3fc5688c; */
-  background-color: #85dcb8;
+  background-color: #b5c99a;
   max-width: 100px;
 }
 
@@ -129,7 +129,7 @@ button:focus-visible {
   align-items: center;
   flex-flow: row;
   /* background-color: rgb(231 255 209); */
-  background-color: #85dcb8;
+  background-color: #b5c99a;
   width: 600px;
   border-radius: 0.25rem;
   font-size: 1rem;
@@ -182,7 +182,7 @@ span {
 .uncheckAll {
   border: none;
   background-color: inherit;
-  color: rgb(231 255 209);
+  color: #87986a;
   size: 20;
   font-size: x-large;
   border-radius: 8px;
@@ -191,14 +191,14 @@ span {
 }
 
 .uncheckAll:hover {
-  color: #41b3a3;
+  color: #718355;
   transition: all 0.25s ease-in-out;
 }
 
 .deleteAll {
   border: none;
   background-color: inherit;
-  color: rgb(231 255 209);
+  color: #87986a;
   size: 20;
   font-size: x-large;
   border-radius: 8px;
@@ -226,7 +226,7 @@ span {
   transition: border-color 0.25s;
   text-decoration: none;
   /* color: rgb(245, 184, 105); */
-  color: #41b3a3;
+  color: #87986a;
   /* color: transparent; */
 }
 .deleteBtn:hover {
@@ -247,11 +247,11 @@ span {
   transition: border-color 0.25s;
   text-decoration: none;
   /* color: rgb(245, 184, 105); */
-  color: #41b3a3;
+  color: #87986a;
   /* color: transparent; */
 }
 .editBtn:hover {
-  color: rgb(77, 33, 0);
+  color: #718355;
   transition: all 0.5s ease-in-out;
 }
 

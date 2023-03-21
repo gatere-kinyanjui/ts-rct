@@ -20,10 +20,12 @@ function EditModal({ toggleEditModal, editTodo, todo, handleAdd }: Props) {
     setNewTodoName(e.target.value);
   };
 
+  // const updatedTodo = { newTodoName };
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     editTodo(id, newTodoName);
-    handleAdd(todo, status);
+    // updatedTodo;
     setNewTodoName("");
     toggleEditModal(todo);
 

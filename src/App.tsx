@@ -8,7 +8,8 @@ import {
   fetchIncomplete,
   fetchComplete,
   updateTodoStatus,
-} from "./lib/Funtions";
+  editTodoName,
+} from "./lib/DatabaseService";
 import Incomplete from "./components/Incomplete/Incomplete";
 import Complete from "./components/Complete/Complete";
 import AddTodo from "./components/AddTodo/AddTodo";
@@ -78,14 +79,12 @@ function App() {
   };
 
   const handleDeleteIncompleteTask = (id: string) => {
-    console.log(id);
     deleteTodo(id).then(() => {
       setIncompleteTodos((prev) => [...prev.filter((todo) => todo.id !== id)]);
     });
   };
 
   const handleDeleteCompleteTask = (id: string) => {
-    console.log(id);
     deleteTodo(id).then(() => {
       setCompleteTodos((prev) => [...prev.filter((todo) => todo.id !== id)]);
     });
@@ -115,7 +114,7 @@ function App() {
       return todo;
     });
     setIncompleteTodos(editedTodoList);
-    console.log(id);
+    editTodoName(id, newTodoName);
   };
 
   return (
@@ -160,6 +159,7 @@ function App() {
             toggleEditModal={toggleEditModal}
             editTodo={editTodo}
             todo={editingTodo}
+            handleAdd={handleAdd}
           />
         )}
         {/* </Modal> */}
