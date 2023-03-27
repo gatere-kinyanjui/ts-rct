@@ -3,8 +3,6 @@ import "./EditModal.css";
 import { ITask, TodoStatuses } from "../../lib/Interfaces";
 
 interface Props {
-  // showEditModal: () => void;
-  // hideEditModal: () => void;
   toggleEditModal: (todo: ITask) => void;
   editTodo: (id: string, newTodoName: string) => void;
   todo: ITask;
@@ -20,16 +18,11 @@ function EditModal({ toggleEditModal, editTodo, todo, handleAdd }: Props) {
     setNewTodoName(e.target.value);
   };
 
-  // const updatedTodo = { newTodoName };
-
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     editTodo(id, newTodoName);
-    // updatedTodo;
     setNewTodoName("");
     toggleEditModal(todo);
-
-    // console.log(newTodoName);
   };
 
   return (
@@ -60,7 +53,7 @@ function EditModal({ toggleEditModal, editTodo, todo, handleAdd }: Props) {
           <div className="modalFooter">
             <button
               className="cancelEditedTodo"
-              type="reset"
+              type="button"
               id="cancelBtn"
               onClick={() => toggleEditModal(todo)}
             >

@@ -1,0 +1,21 @@
+.incompleteTasks {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.editModeButton {
+  border: none;
+  background-color: inherit;
+  color: rgb(194, 245, 181);
+  size: 20;
+  font-size: x-large;
+  border-radius: 8px;
+  color: rgb(255, 187, 0);
+  cursor: pointer;
+}
+
+.editModeButton:hover {
+  color: rgb(197, 195, 42);
+  transition: all 0.25s ease-in-out;
+}

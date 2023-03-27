@@ -16,6 +16,28 @@ import AddTodo from "./components/AddTodo/AddTodo";
 
 import EditModal from "./components/EditModal/EditModal";
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCKoQJ3gkJz280Ajud2Xw416lO3sitUlqM",
+  authDomain: "todo-rvstd.firebaseapp.com",
+  projectId: "todo-rvstd",
+  storageBucket: "todo-rvstd.appspot.com",
+  messagingSenderId: "351823376805",
+  appId: "1:351823376805:web:cc1debb83388be071eb84c",
+  measurementId: "G-1C55GMSVME",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 function App() {
   // const [task, setTask] = useState<string>("");
   // const [deadline, setDeadline] = useState<number>(0);
@@ -125,8 +147,9 @@ function App() {
       <div className="tasksDisplay">
         <div className="incompleteTasks">
           <div className="deleteOrEdit">
-            <h3>I plan to</h3>
+            <h3>Pending tasks</h3>
             <button
+              type="button"
               className="deleteAll"
               onClick={() => handleDeleteAllTasks()}
             >
@@ -143,8 +166,10 @@ function App() {
 
         <div className="completeTasks">
           <div className="uncheck">
-            <h3>I'm done with</h3>
-            <button className="uncheckAll">&#10004;</button>
+            <h3>Completed tasks</h3>
+            <button type="button" className="uncheckAll">
+              &#10004;
+            </button>
           </div>
 
           <Complete

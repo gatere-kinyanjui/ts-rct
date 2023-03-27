@@ -1,0 +1,42 @@
+.headerContainer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+.inputHeader {
+  display: flex;
+}
+
+.taskInput {
+  flex: 1;
+  outline: none;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  border-bottom: 1px solid #b5c99a;
+  width: 400px;
+  background-color: inherit;
+  font-family: "Nunito", sans-serif;
+}
+
+.addBtn {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.2rem 0.6rem;
+  font-weight: 200;
+  font-family: inherit;
+  font-size: 2rem;
+  background-color: inherit;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  content: \002B;
+  width: 100%;
+  max-width: 50px;
+}
+
+.addBtn:hover {
+  background-color: #b5c99a;
+  max-width: 100px;
+}

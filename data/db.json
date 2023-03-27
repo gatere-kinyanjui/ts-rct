@@ -42,7 +42,7 @@
     },
     {
       "id": "LsWRT5qth1VqQmNSKJqRC",
-      "taskName": "Make weather app",
+      "taskName": "Make weather app 2",
       "deadline": 0,
       "status": "incomplete"
     },
@@ -106,7 +106,13 @@
     },
     {
       "id": "9A0n4ZYgRN72SjQgNtgnl",
-      "taskName": " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime           obcaecati nesciunt commodi rem, earum quis voluptatem error inventore           id necessitatibus dolore voluptatibus animi unde quae dolor dolorem           voluptates enim! Natus possimus autem obcaecati optio et fugit at modi           sit earum! Suscipit, veniam repudiandae. Quia labore eligendi enim           repellat dolore blanditiis.",
+      "taskName": "the lorem here",
+      "deadline": 0,
+      "status": "incomplete"
+    },
+    {
+      "id": "p0gviKzxIVJWgxPSbh8g3",
+      "taskName": "Begin Node.JS course on T.O.P",
       "deadline": 0,
       "status": "incomplete"
     }

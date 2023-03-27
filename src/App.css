@@ -1,97 +1,14 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@300;400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"); */
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Fuzzy+Bubbles:wght@400;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Space+Grotesk:wght@300;400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
-
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  /* font-family: "Comfortaa", cursive; */
-  font-family: "Nunito", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  /* width: 100%;
-  height: 100%; */
-}
-
 .App {
   display: flex;
-  gap: 5rem;
   flex-direction: column;
   flex-wrap: wrap;
 
   width: 100%;
-  /* max-width: 300px; */
-  /* width: 100%;
-  height: 100%; */
+  max-width: 300px;
+  height: 100%;
 }
-
-.headerContainer {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  flex-flow: column wrap;
-}
-
-.inputHeader {
-  display: flex;
-}
-
-.taskInput {
-  flex: 1;
-  outline: none;
-  border: none;
-  padding: 1rem;
-  font-size: 1rem;
-  border-bottom: 1px solid #b5c99a;
-  width: 400px;
-  background-color: inherit;
-  /* color: rgb(166, 233, 31); */
-  font-family: "Nunito", sans-serif;
-  /* flex: 1 1 40ch; */
-}
-
-.addBtn {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.2rem 0.6rem;
-  font-weight: 200;
-  font-family: inherit;
-  font-size: 2rem;
-  background-color: inherit;
-  cursor: pointer;
-  transition: all 0.4s ease-in-out;
-  content: \002B;
-  width: 100%;
-  max-width: 50px;
-}
-
-.addBtn:hover {
-  /* border-color: #3fc5688c; */
-  background-color: #b5c99a;
-  max-width: 100px;
-}
-
-/* button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
 
 .tasksDisplay {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-}
-
-.incompleteTasks {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -115,12 +32,6 @@ button:focus-visible {
   align-content: center;
 }
 
-.completeTasks {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-}
-
 .todoTaskContainer {
   justify-content: space-between;
   display: flex;
@@ -128,7 +39,6 @@ button:focus-visible {
   padding-block: 0.3rem;
   align-items: center;
   flex-flow: row;
-  /* background-color: rgb(231 255 209); */
   background-color: #b5c99a;
   width: 600px;
   border-radius: 0.25rem;
@@ -137,46 +47,17 @@ button:focus-visible {
   color: none;
 }
 
-/* .contentContainer {
-  display: flex;
-  flex-flow: row;
-} */
-
 label {
-  /* background-color: rgb(153, 209, 115); */
   display: flex;
   cursor: pointer;
   margin-left: 1rem;
   align-items: center;
 }
 
-/* label > input[type="checkbox"]:checked {
-  background-color: rgb(209, 44, 71);
-} */
-
 span {
   margin: 0 0 0 0.5em;
   outline: none;
   text-align: justify;
-}
-
-/* .taskName {
-} */
-
-.editModeButton {
-  border: none;
-  background-color: inherit;
-  color: rgb(194, 245, 181);
-  size: 20;
-  font-size: x-large;
-  border-radius: 8px;
-  color: rgb(255, 187, 0);
-  cursor: pointer;
-}
-
-.editModeButton:hover {
-  color: rgb(197, 195, 42);
-  transition: all 0.25s ease-in-out;
 }
 
 .uncheckAll {
@@ -186,7 +67,6 @@ span {
   size: 20;
   font-size: x-large;
   border-radius: 8px;
-  /* color: transparent; */
   cursor: pointer;
 }
 
@@ -202,16 +82,12 @@ span {
   size: 20;
   font-size: x-large;
   border-radius: 8px;
-  /* color: transparent; */
   cursor: pointer;
 }
 .deleteAll:hover {
   color: red;
   transition: all 0.25s ease-in-out;
 }
-
-/* .taskBtns {
-} */
 
 .deleteBtn {
   background-color: inherit;
@@ -225,9 +101,7 @@ span {
   cursor: pointer;
   transition: border-color 0.25s;
   text-decoration: none;
-  /* color: rgb(245, 184, 105); */
   color: #87986a;
-  /* color: transparent; */
 }
 .deleteBtn:hover {
   color: red;
@@ -246,41 +120,9 @@ span {
   cursor: text;
   transition: border-color 0.25s;
   text-decoration: none;
-  /* color: rgb(245, 184, 105); */
   color: #87986a;
-  /* color: transparent; */
 }
 .editBtn:hover {
   color: #718355;
   transition: all 0.5s ease-in-out;
 }
-
-/* .todoTaskContainer .contentContainer {
-  flex: 80%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.todoTaskContainer .contentContainer span {
-  display: grid;
-  place-items: center;
-  border: 1px solid white;
-  width: 100%;
-  height: 100%;
-  font-size: 18px;
-  border-right: none;
-  background-color: tomato;
-}
-l
-.todoTaskContainer button {
-  flex: 20%;
-  height: 100%;
-  border: none;
-  background-color: lightseagreen;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  color: white;
-  cursor: pointer;
-} */ ;

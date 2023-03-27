@@ -3,6 +3,8 @@ import { ITask, TodoStatuses } from "../../lib/Interfaces";
 import { nanoid } from "nanoid";
 import { createTodo } from "../../lib/DatabaseService";
 
+import "./AddTodo.css";
+
 interface Props {
   handleAdd: (todo: ITask, status: TodoStatuses) => void;
 }

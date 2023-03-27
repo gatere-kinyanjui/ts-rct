@@ -2,6 +2,8 @@ import React, { ChangeEvent } from "react";
 import { ITask, TodoStatuses } from "../../lib/Interfaces";
 import { deleteTodo } from "../../lib/DatabaseService";
 
+import "./Incomplete.css";
+
 interface Props {
   todos: ITask[];
   handleDeleteIncompleteTask: (id: string) => void;
@@ -36,11 +38,16 @@ function Incomplete({
           {/* <span>{task.deadline}</span> */}
 
           <div className="taskBtns">
-            <button className="editBtn" onClick={() => toggleEditModal(todo)}>
+            <button
+              type="button"
+              className="editBtn"
+              onClick={() => toggleEditModal(todo)}
+            >
               &#9998;
             </button>
 
             <button
+              type="button"
               className="deleteBtn"
               onClick={() => handleDeleteIncompleteTask(todo.id)}
             >

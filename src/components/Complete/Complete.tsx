@@ -2,6 +2,8 @@ import React from "react";
 import { ITask, TodoStatuses } from "../../lib/Interfaces";
 import { deleteTodo } from "../../lib/DatabaseService";
 
+import "./Complete.css";
+
 interface Props {
   todos: ITask[];
   handleDeleteCompleteTask: (id: string) => void;
@@ -27,6 +29,7 @@ function Complete({ todos, handleDeleteCompleteTask, handleStatus }: Props) {
           </label>
           {/* <span>{task.deadline}</span> */}
           <button
+            type="button"
             className="deleteBtn"
             onClick={() => handleDeleteCompleteTask(todo.id)}
           >
