@@ -16,32 +16,7 @@ import AddTodo from "./components/AddTodo/AddTodo";
 
 import EditModal from "./components/EditModal/EditModal";
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyCKoQJ3gkJz280Ajud2Xw416lO3sitUlqM",
-  authDomain: "todo-rvstd.firebaseapp.com",
-  projectId: "todo-rvstd",
-  storageBucket: "todo-rvstd.appspot.com",
-  messagingSenderId: "351823376805",
-  appId: "1:351823376805:web:cc1debb83388be071eb84c",
-  measurementId: "G-1C55GMSVME",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
 function App() {
-  // const [task, setTask] = useState<string>("");
-  // const [deadline, setDeadline] = useState<number>(0);
-  // const [todoList, setTodoList] = useState<ITask[]>([]);
   const [incompleteTodos, setIncompleteTodos] = useState<ITask[]>([]);
   const [completeTodos, setCompleteTodos] = useState<ITask[]>([]);
 
@@ -58,11 +33,6 @@ function App() {
   useEffect(() => {
     fetchIncomplete().then((res) => setIncompleteTodos(res));
     fetchComplete().then((res) => setCompleteTodos(res));
-
-    // allTodos().then((res) => {
-    //   console.log("side effect init!");
-    //   setTodoList(res);
-    // });
   }, []);
 
   // use prev value when setting the todo list
